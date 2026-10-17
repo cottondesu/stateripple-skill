@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "ruleset": "risk-propagation-v1",
+  "max_generations": 16,
+  "nodes": [
+    {"id": "mine", "kind": "supplier"},
+    {"id": "smelter", "kind": "facility"},
+    {"id": "port", "kind": "warehouse"},
+    {"id": "factory", "kind": "facility"},
+    {"id": "store", "kind": "retailer"},
+    {"id": "backup", "kind": "supplier"}
+  ],
+  "edges": [
+    {"from": "mine", "to": "smelter", "kind": "ships_to", "attenuation": 0},
+    {"from": "smelter", "to": "port", "kind": "ships_to", "attenuation": 1},
+    {"from": "port", "to": "factory", "kind": "ships_to", "attenuation": 0},
+    {"from": "backup", "to": "factory", "kind": "ships_to", "attenuation": 2},
+    {"from": "factory", "to": "store", "kind": "delivers_to", "attenuation": 1}
+  ],
+  "seeds": [
+    {"id": "mine", "risk": 3, "reason": "flood"},
+    {"id": "backup", "risk": 3, "reason": "strike"}
+  ]
+}

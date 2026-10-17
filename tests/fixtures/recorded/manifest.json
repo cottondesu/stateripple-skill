@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "kind": "real-cli-capture",
+  "baseline_commit": "2334ba7573c1d0b4565189c93f780b35e08ea81d",
+  "records": [
+    {
+      "fixture": "risk-zero.json",
+      "mode": "simulate",
+      "command": [
+        "stateripple",
+        "simulate",
+        "--input",
+        "tests/fixtures/risk-zero.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "report": "recorded/risk-zero.report.json",
+      "cli_version": "stateripple v0.1.0",
+      "date": "2026-10-10",
+      "report_sha256": "fd2c6ec37e49aa76e02f7b849825ff274eb85da947fdb5dfc91806bd13649be4",
+      "input_raw_sha256": "1ff65667863940ad106137cc97acece361f008ef7d7976d031d43db5c765e383"
+    },
+    {
+      "fixture": "generation-limit.json",
+      "mode": "simulate",
+      "command": [
+        "stateripple",
+        "simulate",
+        "--input",
+        "tests/fixtures/generation-limit.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 2,
+      "report": "recorded/generation-limit.report.json",
+      "cli_version": "stateripple v0.1.0",
+      "date": "2026-10-10",
+      "report_sha256": "0dbaa22efaddc26ef2d55822be6f5037c899b0245f394971c34297fc2fd33c4a",
+      "input_raw_sha256": "cc8eac782ddc9f48654211346ce426c9bd231f9e56a89ccb0a53a792299c22ba"
+    },
+    {
+      "fixture": "tied-cycle.json",
+      "mode": "simulate",
+      "command": [
+        "stateripple",
+        "simulate",
+        "--input",
+        "tests/fixtures/tied-cycle.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "report": "recorded/tied-cycle.report.json",
+      "cli_version": "stateripple v0.1.0",
+      "date": "2026-10-10",
+      "report_sha256": "f71ff4f3f2c0e8dccfc8469aeea7111fc557417715832fd5d5b257b975ff9915",
+      "input_raw_sha256": "64edd177a723d0282cc975d86622fa4ea4a1c3a963a074ba8504cf5db2cd54b1"
+    },
+    {
+      "fixture": "malicious.json",
+      "mode": "simulate",
+      "command": [
+        "stateripple",
+        "simulate",
+        "--input",
+        "tests/fixtures/malicious.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "report": "recorded/malicious.report.json",
+      "cli_version": "stateripple v0.1.0",
+      "date": "2026-10-10",
+      "report_sha256": "816ee5edf62e20a6529b21f85c99f7b13036090b2569c3cf2c54d3c0577d951c",
+      "input_raw_sha256": "f5ee0f7fed7f41de3b1c29f46f1a1d03e7245d0b67f6eb11a202bc8c4535082e"
+    },
+    {
+      "fixture": "generated clean Go repository with committed opaque.asset",
+      "mode": "analyze",
+      "command": [
+        "stateripple",
+        "analyze",
+        "--base",
+        "HEAD~1",
+        "--format",
+        "json"
+      ],
+      "exit_code": 2,
+      "report": "recorded/adapter-incomplete.report.json",
+      "cli_version": "stateripple v0.1.0",
+      "date": "2026-10-10",
+      "report_sha256": "af45a02a4939a57653411d55a9fbeca0b2ef2c449c74be8d69326d6223b79e3b",
+      "input_raw_sha256": null
+    },
+    {
+      "fixture": "freshness-changed.json",
+      "mode": "simulate",
+      "command": [
+        "stateripple",
+        "simulate",
+        "--input",
+        "tests/fixtures/freshness-changed.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "report": "recorded/freshness-changed.report.json",
+      "cli_version": "stateripple v0.1.0",
+      "date": "2026-10-11",
+      "report_sha256": "2f61af8212ec42b01d7b19fcec3659d2ec3534fd7179172c7c7467c6cc55e7ad",
+      "input_raw_sha256": "09cbde0789524d668e941b69782a828cfe2845a2cbfd2cd2db2ac939595e643f"
+    }
+  ]
+}

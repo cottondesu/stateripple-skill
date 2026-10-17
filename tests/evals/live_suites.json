@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "release_gate": {
+    "suites": ["release", "activation"],
+    "agents": ["codex", "claude"],
+    "approval": {
+      "at_least_one": ["ai-release-review", "human-release-review"],
+      "all_supplied_must_approve": true
+    }
+  },
+  "suites": {
+    "smoke": {
+      "description": "Fast explicit routing and fail-closed checks.",
+      "cases": ["L01", "L03", "L06", "L12"]
+    },
+    "release": {
+      "description": "All mandatory live scenarios for both supported agents.",
+      "cases": ["L01", "L02", "L03", "L04", "L05", "L06", "L07", "L08", "L09", "L10", "L11", "L12", "L13", "L14"]
+    }
+  }
+}

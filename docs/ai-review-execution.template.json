@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "record_type": "ai-review-execution",
+  "reviewer_id": "",
+  "model": "",
+  "session_id": "",
+  "review_target": {
+    "skill_revision": "",
+    "source_tree_sha256": "",
+    "evidence_digest": ""
+  },
+  "read_only": false,
+  "baseline_source_tree_sha256": "",
+  "diff": {
+    "path": "ai-review-evidence/changes.diff",
+    "sha256": ""
+  },
+  "started_at": "",
+  "finished_at": "",
+  "source_tree_before": "",
+  "source_tree_after": "",
+  "source_files": {},
+  "manifest_files": {},
+  "transcript": {
+    "path": "ai-review-evidence/transcript.txt",
+    "sha256": ""
+  },
+  "verification": {
+    "make build": {
+      "exit_code": null,
+      "source_tree_sha256": "",
+      "log": {
+        "path": "",
+        "sha256": ""
+      }
+    },
+    "make check": {
+      "exit_code": null,
+      "source_tree_sha256": "",
+      "log": {
+        "path": "",
+        "sha256": ""
+      }
+    },
+    "make test": {
+      "exit_code": null,
+      "source_tree_sha256": "",
+      "log": {
+        "path": "",
+        "sha256": ""
+      }
+    },
+    "make cli-compat": {
+      "exit_code": null,
+      "source_tree_sha256": "",
+      "log": {
+        "path": "",
+        "sha256": ""
+      }
+    },
+    "make release-check": {
+      "exit_code": null,
+      "source_tree_sha256": "",
+      "log": {
+        "path": "",
+        "sha256": ""
+      }
+    }
+  },
+  "case_reviews": [],
+  "integrity": {
+    "algorithm": "sha256",
+    "canonical_record_sha256": ""
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "source_repository": "https://github.com/cottondesu/stateripple",
+  "source_commit": "2334ba7573c1d0b4565189c93f780b35e08ea81d",
+  "source_tag": "v0.1.0",
+  "license": "MIT; copyright 2026 cottondesu; see repository LICENSE",
+  "files": [
+    {
+      "path": "cli-empty.golden.json",
+      "sha256": "c215f338ecb25787635a91d230a58eb3e56fc082541b2f3179bc5518eae1bda2",
+      "git_blob": "e84455a129a7b289037bea6148aa7cc8827affc9"
+    },
+    {
+      "path": "cli-empty.json",
+      "sha256": "40f13946a026eef809941032c04433f09254d5c71a1666a971638539061b5ac4",
+      "git_blob": "51b99ec978083a7416ecb096c03a09721fc24364"
+    },
+    {
+      "path": "example.json",
+      "sha256": "ace80d6ffe3b93765b5e13facd48e0910cc41f6651604a12536369fdfccd9a43",
+      "git_blob": "b7fa869a0e1360db7d7ded818ee02f999d759755"
+    },
+    {
+      "path": "example.report.json",
+      "sha256": "809eb4c476c5a45e7d5f764b443fd269aa5cdef0e9865d421d43aff554edf36a",
+      "git_blob": "c927f50c208f6e5f83995dcffc9f74054cfa598e"
+    },
+    {
+      "path": "generic-supply-chain.json",
+      "sha256": "e606685260b2134dafaf55e5ebbb493945f132fe991f2bf347f0f5bcbfa9169f",
+      "git_blob": "cebc19c4d5e0033f40f9c548cef4e152068e8753"
+    },
+    {
+      "path": "generic-supply-chain.report.json",
+      "sha256": "ebbb8c55a296b17e3b7e663f6730b58a7f11070b3f313eaa5993bd27b16a854a",
+      "git_blob": "8c0c5396d49c60e8b3a9f98a46b6a4c9c1c5a551"
+    }
+  ]
+}

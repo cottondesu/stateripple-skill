@@ -1,0 +1,8 @@
+artifacts/evaluations/live/20261013T150739Z-claude-a78abe90
+artifacts/evaluations/replay/20261013T183915Z-edddb979
+artifacts/evaluations/live/20261013T183633Z-claude-64a517fd
+artifacts/evaluations/replay/20261013T183915Z-1c786420
+artifacts/evaluations/live/20261013T151327Z-codex-6277ff73
+artifacts/evaluations/replay/20261013T183915Z-3f8adf4a
+artifacts/evaluations/live/20261013T152453Z-codex-246d9705
+artifacts/evaluations/replay/20261013T183916Z-3e39ff11

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "ruleset": "risk-propagation-v1",
+  "max_generations": 16,
+  "nodes": [
+    {"id":"pkg:A","kind":"package"},
+    {"id":"pkg:B","kind":"package"},
+    {"id":"pkg:C","kind":"package"},
+    {"id":"pkg:D","kind":"package"},
+    {"id":"test:A","kind":"test"},
+    {"id":"test:B","kind":"test"},
+    {"id":"test:C","kind":"test"},
+    {"id":"test:D","kind":"test"}
+  ],
+  "edges": [
+    {"from":"pkg:A","to":"pkg:B","kind":"prod_import","attenuation":1},
+    {"from":"pkg:B","to":"pkg:C","kind":"prod_import","attenuation":1},
+    {"from":"pkg:C","to":"pkg:D","kind":"prod_import","attenuation":1},
+    {"from":"pkg:A","to":"test:A","kind":"own_test","attenuation":0},
+    {"from":"pkg:B","to":"test:B","kind":"own_test","attenuation":0},
+    {"from":"pkg:C","to":"test:C","kind":"own_test","attenuation":0},
+    {"from":"pkg:D","to":"test:D","kind":"own_test","attenuation":0}
+  ],
+  "seeds": [{"id":"pkg:A","risk":3,"reason":"source_changed"}]
+}

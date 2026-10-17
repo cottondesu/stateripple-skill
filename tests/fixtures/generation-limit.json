@@ -1,0 +1,1 @@
+{"schema_version":1,"ruleset":"risk-propagation-v1","max_generations":1,"nodes":[{"id":"a","kind":"service"},{"id":"b","kind":"service"},{"id":"c","kind":"test"}],"edges":[{"from":"a","to":"b","kind":"link","attenuation":0},{"from":"b","to":"c","kind":"link","attenuation":0}],"seeds":[{"id":"a","risk":3,"reason":"supplied change"}]}

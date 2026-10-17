@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "positive": [
+    {
+      "id": "A-P01",
+      "prompt": "StateRippleでこのSnapshotを解析して",
+      "expected_activation": true,
+      "expected_route": "simulate"
+    },
+    {
+      "id": "A-P02",
+      "prompt": "StateRippleでGoコミットの影響範囲を調べて",
+      "expected_activation": true,
+      "expected_route": "analyze"
+    },
+    {
+      "id": "A-P03",
+      "prompt": "Simulate risk propagation with StateRipple.",
+      "expected_activation": true,
+      "expected_route": "simulate"
+    },
+    {
+      "id": "A-P04",
+      "prompt": "Analyze committed Go changes using StateRipple.",
+      "expected_activation": true,
+      "expected_route": "analyze"
+    }
+  ],
+  "negative": [
+    {
+      "id": "A-N01",
+      "prompt": "このコードを一般的にレビューして",
+      "expected_activation": false
+    },
+    {
+      "id": "A-N02",
+      "prompt": "通常の設計相談に乗ってください",
+      "expected_activation": false
+    },
+    {
+      "id": "A-N03",
+      "prompt": "StateRippleを使わないでリスクについて説明して",
+      "expected_activation": false
+    },
+    {
+      "id": "A-N04",
+      "prompt": "Track this project and organize its tasks.",
+      "expected_activation": false
+    }
+  ]
+}

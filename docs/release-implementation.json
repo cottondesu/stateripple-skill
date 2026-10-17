@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "record_type": "release-implementation",
+  "baseline_source_tree_sha256": "da38b30b7a2895b1a8604c9e6db7ece6aa21e259a3b3617b120c378e900eb280",
+  "sessions": ["01a14895-695d-7220-bd46-19386c01dc8c/root"]
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "profiles": {
+    "snapshot-simulation": {
+      "description": "Evaluation applicability for supplied snapshot propagation.",
+      "cases": {
+        "L01": "CORE",
+        "L02": "NOT_APPLICABLE",
+        "L03": "CORE",
+        "L04": "CORE",
+        "L05": "CORE",
+        "L06": "CORE",
+        "L07": "NOT_APPLICABLE",
+        "L08": "NOT_APPLICABLE",
+        "L09": "NOT_APPLICABLE",
+        "L10": "CORE",
+        "L11": "CORE",
+        "L12": "CORE",
+        "L13": "CORE",
+        "L14": "NOT_APPLICABLE"
+      }
+    },
+    "go-change-impact": {
+      "description": "Evaluation applicability for committed changes in supported Go repositories.",
+      "cases": {
+        "L01": "NOT_APPLICABLE",
+        "L02": "CORE",
+        "L03": "CONDITIONAL",
+        "L04": "CONDITIONAL",
+        "L05": "NOT_APPLICABLE",
+        "L06": "NOT_APPLICABLE",
+        "L07": "CORE",
+        "L08": "CORE",
+        "L09": "CORE",
+        "L10": "NOT_APPLICABLE",
+        "L11": "NOT_APPLICABLE",
+        "L12": "CORE",
+        "L13": "NOT_APPLICABLE",
+        "L14": "CORE"
+      }
+    },
+    "incomplete-analysis-recovery": {
+      "description": "Evaluation applicability for fail-closed handling of unavailable or incomplete evidence.",
+      "cases": {
+        "L01": "CONDITIONAL",
+        "L02": "CONDITIONAL",
+        "L03": "CORE",
+        "L04": "CORE",
+        "L05": "CONDITIONAL",
+        "L06": "CORE",
+        "L07": "CORE",
+        "L08": "CORE",
+        "L09": "CORE",
+        "L10": "CORE",
+        "L11": "CONDITIONAL",
+        "L12": "CORE",
+        "L13": "CORE",
+        "L14": "CONDITIONAL"
+      }
+    }
+  }
+}

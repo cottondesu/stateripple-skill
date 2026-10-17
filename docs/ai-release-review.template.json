@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "record_type": "ai-release-review",
+  "reviewer_kind": "ai",
+  "reviewer_id": "",
+  "model": "",
+  "session_id": "",
+  "reviewed_at": "",
+  "method": "",
+  "skill_revision": "",
+  "source_tree_sha256": "",
+  "evidence_digest": "",
+  "independence": {
+    "baseline_source_tree_sha256": "",
+    "implementation_sessions": [],
+    "basis": "",
+    "limitations": ""
+  },
+  "execution": {
+    "path": "ai-review-evidence/execution.json",
+    "sha256": ""
+  },
+  "evidence_review": {
+    "live": {
+      "status": "NOT_RUN",
+      "notes": "",
+      "log_lines": []
+    },
+    "replay": {
+      "status": "NOT_RUN",
+      "notes": "",
+      "log_lines": []
+    },
+    "positive_activation": {
+      "status": "NOT_RUN",
+      "notes": "",
+      "log_lines": []
+    },
+    "negative_activation": {
+      "status": "NOT_RUN",
+      "notes": "",
+      "log_lines": []
+    },
+    "package": {
+      "status": "NOT_RUN",
+      "notes": "",
+      "log_lines": []
+    },
+    "manifests": {
+      "status": "NOT_RUN",
+      "notes": "",
+      "log_lines": []
+    },
+    "safety_contracts": {
+      "status": "NOT_RUN",
+      "notes": "",
+      "log_lines": []
+    },
+    "known_limitations": {
+      "status": "NOT_RUN",
+      "notes": "",
+      "log_lines": []
+    }
+  },
+  "safety_contracts": {
+    "CLI-001": "NOT_RUN",
+    "CLI-002": "NOT_RUN",
+    "CLI-003": "NOT_RUN",
+    "ROUTE-001": "NOT_RUN",
+    "ROUTE-002": "NOT_RUN",
+    "ROUTE-003": "NOT_RUN",
+    "ROUTE-004": "NOT_RUN",
+    "RISK-001": "NOT_RUN",
+    "RISK-002": "NOT_RUN",
+    "TRACE-001": "NOT_RUN",
+    "TRACE-002": "NOT_RUN",
+    "COMP-001": "NOT_RUN",
+    "COMP-002": "NOT_RUN",
+    "COMP-003": "NOT_RUN",
+    "COMP-004": "NOT_RUN",
+    "TEST-001": "NOT_RUN",
+    "SAFE-001": "NOT_RUN",
+    "SAFE-002": "NOT_RUN",
+    "SAFE-003": "NOT_RUN",
+    "SAFE-004": "NOT_RUN",
+    "SAFE-005": "NOT_RUN",
+    "SAFE-006": "NOT_RUN"
+  },
+  "findings": [],
+  "decision": null,
+  "rationale": "",
+  "integrity": {
+    "algorithm": "sha256",
+    "canonical_record_sha256": ""
+  }
+}

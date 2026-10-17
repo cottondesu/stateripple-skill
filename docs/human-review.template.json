@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "record_type": "human-release-review",
+  "reviewer_kind": "human",
+  "reviewer": "",
+  "reviewed_at": "",
+  "skill_revision": "",
+  "source_tree_sha256": "",
+  "evidence_digest": "",
+  "git_commit": null,
+  "checklist": {
+    "H01": false,
+    "H02": false,
+    "H03": false,
+    "H04": false,
+    "H05": false,
+    "H06": false,
+    "H07": false,
+    "H08": false,
+    "H09": false,
+    "H10": false
+  },
+  "notes": "",
+  "decision": null,
+  "attestation": "I am a human maintainer and I reviewed this release myself; this record was not written by an AI system."
+}
