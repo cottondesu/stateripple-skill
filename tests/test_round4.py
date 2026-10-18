@@ -904,16 +904,21 @@ class ProbeVerificationTests(_Base):
         behaviour = behaviour or (lambda restricted, identifier, kind, path: None)
         with tempfile.TemporaryDirectory() as temp:
             tree, home = _tree_and_home(temp)
+            slash_tmp = writeguard.SLASH_TMP
+            if sys.platform == 'linux':
+                slash_tmp = str(Path(temp).resolve() / 'slash-tmp')
+                Path(slash_tmp).mkdir()
             with patch.object(writeguard, 'run_group', _fake_probe_runner(behaviour, seen)), patch.object(writeguard.Path, 'home', lambda: home), \
-                    patch.object(writeguard.sys, 'platform', 'darwin'), patch.object(writeguard.os, 'access', lambda *args: True):
+                    patch.object(writeguard.sys, 'platform', 'darwin'), patch.object(writeguard.os, 'access', lambda *args: True), \
+                    patch.object(writeguard, 'SLASH_TMP', slash_tmp):
                 evidence = writeguard.probe(agent, case_id, nonce, tree, {})
             self.assertFalse((tree / 'write-guard-probe').exists())
             self.assertFalse((tree / 'write-guard-link').is_symlink())
             # Whatever the probe saw, the tree is where the runner made it and nothing was left in the made-up home.
             self.assertTrue(tree.is_dir() and not tree.is_symlink())
             self.assertEqual(list((home / '.claude' / 'projects').iterdir()), [])
-        for place in (tempfile.gettempdir(), writeguard.SLASH_TMP):
-            self.assertEqual(list(Path(place).glob('stateripple-guard-canary-*')), [], place)
+            for place in (tempfile.gettempdir(), slash_tmp):
+                self.assertEqual(list(Path(place).glob('stateripple-guard-canary-*')), [], place)
         return evidence
 
     def assert_rejected(self, evidence, fragment=None):
@@ -1149,8 +1154,10 @@ class ProbeVerificationTests(_Base):
         self.assertEqual(sorted(control), sorted(identifier for identifier, _, target in writeguard.RESTRICTED_OPERATIONS if target in ('slash_tmp', 'tempdir')))
         self.assertTrue(all('/control/' in path for path in control.values()))
         self.assertTrue(all('/control/' not in path for path in restricted.values()))
-        self.assertTrue(restricted['slash-tmp-create'].startswith('/private/tmp/stateripple-guard-canary-'))
-        self.assertFalse(restricted['tempdir-create'].startswith('/private/tmp/'))
+        tree = Path(seen[1][2][:-len(writeguard.PROFILE_SUFFIX)])
+        slash_tmp = str(tree.parent / 'slash-tmp') if sys.platform == 'linux' else writeguard.SLASH_TMP
+        self.assertTrue(restricted['slash-tmp-create'].startswith(slash_tmp + '/stateripple-guard-canary-'))
+        self.assertFalse(restricted['tempdir-create'].startswith(slash_tmp + '/'))
         self.assertEqual(writeguard.guard_problems('claude', 'A-P01', NONCE, evidence, [self.h._argv('claude')]), [])
         # No sandbox on this host, or an unknown agent: unavailable, never a pass.
         with patch.object(writeguard.sys, 'platform', 'linux'):
@@ -1242,9 +1249,16 @@ class ProbeVerificationTests(_Base):
             with tempfile.TemporaryDirectory() as temp:
                 tree, home = _tree_and_home(temp)
                 Path(writeguard.profile_path(str(tree))).write_text('(version 1)\n(allow default)\n')
+                slash_tmp = writeguard.SLASH_TMP
+                if sys.platform == 'linux':
+                    slash_tmp = str(Path(temp).resolve() / 'slash-tmp')
+                    Path(slash_tmp).mkdir()
                 with patch.object(writeguard, 'run_group', _fake_probe_runner(lambda *args: None)), patch.object(writeguard.Path, 'home', lambda: home), \
-                        patch.object(writeguard.sys, 'platform', 'darwin'), patch.object(writeguard.os, 'access', lambda *args: True):
+                        patch.object(writeguard.sys, 'platform', 'darwin'), patch.object(writeguard.os, 'access', lambda *args: True), \
+                        patch.object(writeguard, 'SLASH_TMP', slash_tmp):
                     other = writeguard.probe('claude', 'L01', NONCE, tree, {})
+                for place in (tempfile.gettempdir(), slash_tmp):
+                    self.assertEqual(list(Path(place).glob('stateripple-guard-canary-*')), [], place)
         self.assertIn('the write restriction differs from the current policy', other['problems'])
         self.assertIn('the probe did not run under the profile the agent is started with', other['problems'])
 
